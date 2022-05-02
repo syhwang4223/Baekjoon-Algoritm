@@ -12,12 +12,14 @@ parent = [i for i in range(n)]
 for _ in range(n):
     graphs.append(list(map(int, stdin.readline().split())))
 
+
 # 특정 원소가 속한 집합을 찾기
 def find_parent(parent, x):
-    # 루트 노드가 아니라면, 루트 노드를 찾을 떄까지 재구적으로 호출
+    # 루트 노드가 아니라면, 루트 노드를 찾을 떄까지 재귀적으로 호출
     if parent[x] != x:
         parent[x] = find_parent(parent, parent[x])
     return parent[x]
+
 
 # 두 원소가 속한 집합을 합치기
 def union_parent(parent, a, b):
@@ -28,10 +30,11 @@ def union_parent(parent, a, b):
     else:
         parent[a] = b
 
+
 # union-find
 for i in range(n):
     for j in range(n):
-        # 두 도시가 연결되어 있으면 부모 노드 바꿔주기
+        # 두 도시가 연결되어 있으면 부모 노드 설정해주기
         if graphs[i][j] == 1:
            union_parent(parent, i, j)
         

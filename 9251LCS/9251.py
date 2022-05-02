@@ -14,3 +14,5 @@ for i in range(1,l1+1):
             lcs[i][j] = max(lcs[i][j-1], lcs[i-1][j])
             
 print(lcs[-1][-1])
+for l in lcs:
+    print(l)

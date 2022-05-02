@@ -14,4 +14,3 @@ for i in range(2,n+1):
     dp[i] = min(tmp)+1
 
 print(dp[-1])    
-print(dp)
