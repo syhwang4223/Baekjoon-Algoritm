@@ -53,7 +53,3 @@ while True:
             ans += z
 
     print(ans)
-
-
-
-    
